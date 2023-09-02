@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block bloque_titulo %}
+    Sistema de administración de contenido | Inicio
+{% endblock bloque_titulo %}
+
+{% block bloque_home_active %}
+    active
+{% endblock bloque_home_active %}
+
+{% block bloque_nav_item_sobre_mi %}
+    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'about' %}><i class="bi bi-info-circle"></i> Sobre mí</a></li>
+{% endblock bloque_nav_item_sobre_mi %}
+
+{% block bloque_header %}
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-4">
+                    <h1 class="text-center display-4 fw-bolder">
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.first_name %}
+                                ¡Bienvenido, {{ request.user.first_name }}!
+                            {% else %}
+                                ¡Bienvenido!
+                            {% endif %}
+                        {% else %}
+                            Sistema de administración de contenido
+                        {% endif %}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock bloque_header %}
