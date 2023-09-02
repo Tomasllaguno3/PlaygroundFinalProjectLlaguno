@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', include('home.urls')),
+    path('', include('mi_blog_app.urls')),
     path('accounts/', include('accounts.urls')),
     path('posts/', include('post.urls')),
     path('chats/', include('mensajeria.urls')),
